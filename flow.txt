@@ -1,0 +1,21 @@
+-- f1 module ( HTML, CSS, Bootstrap,  bit of js )
+-- f2 (Javascript upto DOM, frontend projects)
+        excel sheet clone, employee management system, jira dashboard clone
+
+    1. Functions( prim & non prim type, closures , scope chaining, execution flow)
+    2. DOM 
+    3. Projects on DOM
+
+
+    topics covered: 
+        functions, hoisting,
+        loops, conditional statements, arrays
+
+
+
+-- f3 (Async javascript, frontend applications )
+-- f4 ( react )
+
+placement readiness modules
+
+-- nodejs module
