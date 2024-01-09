@@ -130,7 +130,98 @@ let obj = {
 // console.log(obj)
 
 // adding new properties
-obj.role = "SDE";
-console.log(obj);
+// obj.role = "SDE";
+// console.log(obj);
 // obj["domain"] = "Fullstack"
 // console.log(obj);
+
+
+// let x = prompt("Enter your name")
+
+// let x = prompt("enter first number")
+// let y = prompt("enter second number");
+// alert(`The final result is: ${Number(x) * 2 + Number(y)}`)
+
+
+// let myName = "Aravind", role = "Software developer"
+// // let str = "I am " + myName + " , i am a " + role;
+
+// let str = `I am ${myName} , i am a ${role}`
+// console.log(str);
+
+
+// Object iterations and Higher order functions
+// array methods ( forEach, map, filter, reduce )
+
+// let arr = [10, 20, 30]
+// let user = {
+//     name: "aravind",
+//     email: "aravind@gmail.com"
+// };
+
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for in => over indices , for of loop => values
+// 0, 1, 2
+// for (let x in arr) {
+//     console.log(x);
+// }
+// let z = "name";
+// console.log(user[z]); // user["name"]
+
+
+// for (let y in user) {
+//     // y = "name"
+//     // y = "email"
+//     console.log(user);
+//     // user["name"] => "aravind"
+//     // user["email"] => "aravind@gmail.com"
+// }
+
+// for of loop => iterate over the values 
+
+// let nums = [87, 23, 18];
+// for (let x of user) {
+//     // x = 87, 23, 18
+//     console.log(x);
+// }
+
+
+// objects are un ordered 
+// let user = {
+//     name: "ejjr",
+//     age: "djjd",
+//     10: "Valu 1",
+//     12: "Value 2",
+//     9: "value 3"
+// }
+
+// console.log(user);
+
+// array of n numbers find the frequency of occurence of all the numbers 
+
+
+// let nums = [2, 3, 2, 2, 4, 3, 9, 10];
+// //                      x
+// let freq = {};
+
+// for (let x of nums) {
+//     // check if x key is present inside freq
+//     if (freq[x]) { // undefined
+//         freq[x]++;
+//     }
+//     else {
+//         freq[x] = 1;
+//     }
+// }
+
+// console.log(freq);
+
+
+
+
+
+
