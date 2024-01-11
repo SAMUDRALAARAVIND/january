@@ -87,3 +87,165 @@ let r2 = nums.map(f1);
 // }
 
 // callme(10, 20, 30);
+
+/*
+
+Agenda:
+
+ filter , reduce and sort function
+ Problems on arrays
+
+ Strings
+*/
+
+
+// function temp(x) {
+//     /**
+//      * x = 10
+//      */
+//     // console.log(x);
+//     x(); // 10()
+// }
+
+// temp(10);
+
+// a function passed as an argument to some other function is called as callback function.
+
+// let arr = [10, 2, 3, 17];
+// [20, 4, 6, 34]
+
+// arr.forEach(function (e, i, l) {
+//     console.log(e, i, l);
+// })
+// [-1, 8, 8, -5]
+
+// let r = arr.map((e, i, l) => {
+//     return i - e;
+// })
+
+// console.log(r);
+
+// let r = arr.map(e => 2 * e)
+// console.log(r);
+
+// [10, 2, 3, 17] => even numbers => [10, 2]
+// filter 
+// let r = arr.filter(e =>  e % 2 == 1);
+// console.log(r);
+
+
+
+// let arr = [10, 2, 30, 12, 45];
+// reduce takes two arguments 
+// first => function 
+// second => intial value
+
+// the first callback function can take three parameters
+// let r = arr.reduce(function (previous, current, index) {
+//     console.log(previous, current, index);
+//     return previous + current + index;
+// }, 5);
+
+// console.log(r); // 18
+
+// let sum = 0;
+// arr.forEach(e => {
+//     sum += e;
+// })
+// console.log(sum);
+
+// let r = arr.reduce((prev, e) => prev + e, 0)
+// console.log(r);
+let arr = [2, 3, 1, "aravind", 4, 3]
+let r = arr.reduce((p, c, i) => {
+    return p + c;
+})
+console.log(r); // 6
+
+// 6 + "aravind" => "6aravind"
+
+// "6aravind" + 4 => "6aravind4",
+
+//     "6aravind4" + 3 => "6aravind43"
+
+
+// Problems: 
+
+
+// 1. Contains Property in an Object
+// function containsProp(obj, key) {
+//     // obj = , key = "age" 
+//     // assume that key is not there 
+//     // return Boolean(obj[key]); => will be wrong 
+//     for (let i in obj) {
+//         // i = "name", "college", "course"
+//         if (i === key) {
+//             // key is found
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// let r1 = containsProp({
+//     name: "aravind",
+//     college: "NITW",
+//     course: "BTech",
+//     salary: undefined
+// }, "age")
+
+
+// console.log(r1); // false
+
+
+// Problem 2: Find nth fibonacci number
+
+function fibonacci(n) {
+    // return the nth fibonacci number .
+    if (n <= 2) return n - 1;
+    let a = 0, b = 1;
+
+    // n = 3
+    while (n > 2) {
+        let curr = a + b;
+        a = b;
+        b = curr;
+        n--;
+    }
+
+    return b;
+}
+
+let r1 = fibonacci(19);
+console.log(r1);
+
+
+
+function isSameType(v1, v2) {
+    // v1 , v2 are always strings 
+
+    // "10", "20" => true
+    // "23", "abc" => false
+    // "a" , "xyz" => true
+    // "NaN", "10" => true
+    // "NaN" , "abc" => 
+    // "NaN" , "NaN"
+}
+
+
+let arr1 = [100, 20, 30, 40, 290, 12];
+
+// arr1.sort((a, b) => { return a - b }) // incresing order 
+// arr1.sort((a, b) => { return b - a }) // decreasing order
+
+let users = [
+    { name: "aravind", age: 23 },
+    { name: "rajesh", age: 33 },
+    { name: "Mahesh", age: 28 },
+    { name: "Akhil", age: 19 }
+]
+
+// users.sort((a, b) => { return a.age - b.age }) // sort increasing order of age
+// console.log(users);
+users.sort((a, b) => { return b.age - a.age })
+console.log(users);
