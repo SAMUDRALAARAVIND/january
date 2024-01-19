@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM querying</title>
+    <style>
+      /* #container > p {
+        color: red;
+      } */
+
+      /* #container > span {
+        color: red;
+      } */
+      /* 
+      + => immediate next sibling selector
+      ~ => next sibling
+    */
+      button {
+        border: none;
+        padding: 10px;
+      }
+      .primary {
+        background-color: blue;
+        color: white;
+      }
+      .danger {
+        background-color: red;
+        color: white;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .card {
+        display: flex;
+        justify-content: space-between;
+        background-color: blue;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button onclick="callme(this)">Button 1</button> -->
+    <!-- Upon clicking on the above button show alert message -->
+
+    <div id="container"></div>
+
+    <button onclick="createStudents()">Create Students</button>
+    <!-- <button onclick="createBoldElement()">Create New bold element</button> -->
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+<!-- #container > p + b -->
