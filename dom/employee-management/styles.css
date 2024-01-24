@@ -1,0 +1,62 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.modal {
+    /* Make it occupy the whole document */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #9d9d9d5b;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.modal-body {
+    background-color: white;
+    padding: 30px;
+}
+
+.modal-body form {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.show-modal {
+    display: flex;
+}
+.hide-modal {
+    display: none;
+}
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.employee-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+.employee-list , td, th {
+    border: 1px solid #e7e7e7;
+}
+.employee-list td {
+    text-align: center;
+    padding: 10px;
+}
+
+.employee-list tbody button {
+    border: none;
+    background-color: transparent;
+    box-shadow: 1px 1px 2px #e7e7e7;
+    cursor: pointer;
+}

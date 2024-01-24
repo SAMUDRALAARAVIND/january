@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="create-section">
+      <button id="modal-toggle-btn">Create Employee</button>
+      <div class="modal hide-modal" id="modal">
+        <span class="material-icons close-icon" id="close-icon">close</span>
+        <div class="modal-body">
+          <h2>Enter employee details</h2>
+          <form id="form">
+            <input
+              type="text"
+              placeholder="Name of employee"
+              name="fullName"
+              required
+            />
+            <input type="email" placeholder="Email" name="email" required />
+            <select name="role">
+              <option value="SDE">SDE</option>
+              <option value="Product">Product</option>
+              <option value="Analyst">Data Analyst</option>
+            </select>
+            <input type="date" name="doj" required />
+            <div>
+              <div>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  id="male"
+                  required
+                />
+                <label for="male">Male</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  id="female"
+                  required
+                />
+                <label for="female">Female</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="others"
+                  id="others"
+                  required
+                />
+                <label for="others">Others</label>
+              </div>
+            </div>
+
+            <button>Add Employee</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <table class="employee-list" id="employee-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Employee Id</th>
+          <th>Role</th>
+          <th>Date of Joining</th>
+          <th>Gender</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <!-- <script src="./index.js"></script> -->
+    <script src="./employee.js"></script>
+
+    <!-- <script src="./insert.js"></script> -->
+  </body>
+</html>
