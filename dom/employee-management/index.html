@@ -90,6 +90,61 @@
       </thead>
       <tbody></tbody>
     </table>
+
+    <div class="modal center-modal hide-modal" id="modal1">
+      <div class="modal-body update-modal-body">
+        <form id="form1">
+          <input
+            type="text"
+            placeholder="Name of employee"
+            name="name"
+            required
+          />
+          <input type="email" placeholder="Email" name="email" required />
+          <select name="role">
+            <option value="SDE">SDE</option>
+            <option value="Product">Product</option>
+            <option value="Analyst">Data Analyst</option>
+          </select>
+          <input type="date" name="doj" required />
+          <div>
+            <div>
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                id="update-male"
+                required
+              />
+              <label for="update-male">Male</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                id="update-female"
+                required
+              />
+              <label for="update-female">Female</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="gender"
+                value="others"
+                id="update-others"
+                required
+              />
+              <label for="update-others">Others</label>
+            </div>
+          </div>
+
+          <button>Add Employee</button>
+        </form>
+      </div>
+    </div>
+
     <!-- <script src="./index.js"></script> -->
     <script src="./employee.js"></script>
 

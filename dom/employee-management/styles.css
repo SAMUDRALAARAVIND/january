@@ -60,3 +60,12 @@
     box-shadow: 1px 1px 2px #e7e7e7;
     cursor: pointer;
 }
+
+.center-modal {
+    border: 2px solid red;
+    justify-content: center;
+    align-items: center;
+}
+.update-modal-body {
+    width: 400px;
+}

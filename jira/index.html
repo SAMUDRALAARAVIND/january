@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jira Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="container" id="TODO">
+        <h2>TODO</h2>
+      </section>
+      <section class="container" id="INPROGRESS">
+        <h2>In Progress</h2>
+      </section>
+      <section class="container" id="DONE">
+        <h2>DONE</h2>
+      </section>
+    </main>
+
+    <section class="modal hide-modal" id="modal">
+      <span class="material-icons toggle" onclick="toggleModal(this)">
+        expand_less
+      </span>
+      <form id="create-task-form">
+        <input type="text" required name="title" placeholder="Task Title" />
+        <textarea
+          name="description"
+          placeholder="Task Description"
+          required
+          cols="30"
+          rows="3"
+        ></textarea>
+        <input
+          type="text"
+          name="developer"
+          required
+          placeholder="Developer Name"
+        />
+        <input
+          type="number"
+          name="estimate"
+          placeholder="Estimated time in days"
+        />
+        <select name="status" required>
+          <option value="TODO">To Do</option>
+          <option value="INPROGRESS">In Progress</option>
+          <option value="DONE">Done</option>
+        </select>
+        <button>Create New Task</button>
+      </form>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

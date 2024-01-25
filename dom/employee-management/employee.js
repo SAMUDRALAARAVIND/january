@@ -10,6 +10,8 @@
  * }
  */
 
+const employees = {};
+
 const modalToggleButton = document.getElementById("modal-toggle-btn");
 const modal = document.getElementById("modal");
 const closeIcon = document.getElementById("close-icon");
@@ -27,11 +29,6 @@ function toggleModal() {
     modal.classList.toggle("show-modal");
 }
 
-function editRecord(e) {
-    // e.target = <button class="material-icons">edit</button>
-    console.log("edit record", e.target)
-}
-
 function deleteRecord(e) {
     // parentNode of deleteButton is => td => td.parentNode => tr
     const deleteButton = e.target;
@@ -45,6 +42,8 @@ function createNewEmployeeRecord(employee) {
 
     // record = <tr></tr>
     const record = document.createElement("tr");
+    // every row will get a unique id
+    record.id = employee.id;
     for (let key in employee) {
         const cell = document.createElement("td");
         cell.innerText = employee[key];
@@ -84,6 +83,7 @@ form.addEventListener("submit", (e) => {
         gender: form.gender.value,
     };
 
+    employees[employee.id] = employee;
     // create a new record and add it to the table
     createNewEmployeeRecord(employee);
 
@@ -102,3 +102,94 @@ form.addEventListener("submit", (e) => {
  *  that popup's input feilds should be prefilled with the data of the employee
  *  upon submitting the edit popup, the record table should be updated with new data.
  */
+
+
+/**
+ * const employees = { 
+ *      "1" : { 
+ *              name: "Aravind",
+ *              email: "aravind@gmail.com",
+ *              gender: "Male",
+ *              role: "Product"
+ *         }
+ * }
+ */
+
+const updateModal = document.getElementById("modal1");
+const updateForm = document.getElementById("form1");
+
+// this variable holds the editing employee's id.
+let editingEmployeeId = null;
+
+function toggleUpdateModal() {
+    updateModal.classList.toggle("hide-modal");
+    updateModal.classList.toggle("show-modal");
+}
+
+// takes an employee object and fills that data inside the updateForm
+function prefillData(employee) {
+    /**
+     *  {
+     *      id: "",
+     *      name: "",
+     *      email: "",
+     *      role: "",
+     *      
+     *  }
+     */
+    for (let property in employee) {
+        updateForm[property] && (updateForm[property].value = employee[property])
+    }
+}
+
+function editRecord(e) {
+    const empId = e.target.parentNode.parentNode.id;
+    editingEmployeeId = empId;
+    toggleUpdateModal();
+    prefillData(employees[empId])
+}
+
+updateForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // update the emloyee data
+
+    // collect the updated information from form.
+    const updatedInfo = {
+        name: updateForm.name.value,
+        email: updateForm.email.value,
+        id: editingEmployeeId,
+        role: updateForm.role.value,
+        doj: updateForm.doj.value,
+        gender: updateForm.gender.value,
+    };
+
+    employees[editingEmployeeId] = updatedInfo;
+
+    // before closing the form reset it's data
+    updateForm.reset();
+
+    // close the update popup
+    toggleUpdateModal();
+
+    // update the tr with the new data ? which tr needs to be updated ??
+    const record = document.getElementById(editingEmployeeId);
+    /**
+     * <tr id="1">
+     *          <td>Aravind Samudrala</td>
+     *          <td>samudralaaravind1708@gmail.com</td>
+     *          <td>1</td>
+     *          <td>Product</td>
+     *          <td>2024-01-15</td>
+     *          <td>male</td>
+     *          <td>
+     *              <button class="material-icons">edit</button>
+     *              <button class="material-icons">delete</button>
+     *          </td>
+     * </tr>
+     */
+    let tdCellIndex = 0;
+    for (let property in updatedInfo) {
+        // property = "name", tdCellIndex = 0
+        record.children[tdCellIndex++].innerText = updatedInfo[property];
+    }
+})
