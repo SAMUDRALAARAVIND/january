@@ -36,34 +36,46 @@
         expand_less
       </span>
       <form id="create-task-form">
-        <input type="text" required name="title" placeholder="Task Title" />
+        <input
+          value="Chat App"
+          type="text"
+          required
+          name="title"
+          placeholder="Task Title"
+        />
         <textarea
           name="description"
           placeholder="Task Description"
           required
           cols="30"
           rows="3"
-        ></textarea>
+          value="Chat App description"
+        >
+Chat App description</textarea
+        >
         <input
           type="text"
           name="developer"
           required
           placeholder="Developer Name"
+          value="Aravind Samudrala"
         />
         <input
           type="number"
           name="estimate"
           placeholder="Estimated time in days"
+          value="3"
         />
         <select name="status" required>
-          <option value="TODO">To Do</option>
           <option value="INPROGRESS">In Progress</option>
+          <option value="TODO">To Do</option>
           <option value="DONE">Done</option>
         </select>
         <button>Create New Task</button>
       </form>
     </section>
 
+    <script src="./drag-drop.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

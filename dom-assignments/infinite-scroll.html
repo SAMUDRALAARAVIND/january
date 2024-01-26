@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Scroll</title>
+    <style>
+      .container {
+        height: 400px;
+        /* padding: 5px; */
+        /* box-sizing: border-box; */
+        width: 300px;
+        border: 1px solid gray;
+        overflow-y: scroll;
+      }
+      .item {
+        height: 50px;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+
+    <script>
+      let itemCount = 1;
+      const container = document.querySelector(".container");
+      function generateElements(n) {
+        for (let i = 0; i < n; i++) {
+          const element = document.createElement("div");
+          element.innerText = `Item ${itemCount++}`;
+          element.className = "item";
+          container.appendChild(element);
+        }
+      }
+      generateElements(10);
+
+      container.addEventListener("scroll", () => {
+        console.log(container.scrollTop);
+        // maximumScrollableHeight = 500px - 400px = 100px
+        const maximumScrollableHeight =
+          container.scrollHeight - container.clientHeight;
+        const scrolledHeight = container.scrollTop;
+
+        let remainingScrollableHeight =
+          maximumScrollableHeight - scrolledHeight;
+        // threshold to reach  the bottom is 5px
+        if (remainingScrollableHeight <= 5) {
+          generateElements(10);
+        }
+      });
+
+      // threshold => the amount of pixels to be scrolled to reach to the bottom most
+    </script>
+  </body>
+</html>

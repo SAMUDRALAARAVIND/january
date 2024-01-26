@@ -4,13 +4,14 @@
     font-weight: 400;
     font-style: normal;
   }
-  .task-card {
+.task-card {
     box-shadow: 2px 2px 8px #e7e7e7;
     display: flex;
     justify-content: space-between;
     border-radius: 6px;
     padding: 4px;
     align-items: center;
+    background-color: #fff;
 }
 .badge {
     background-color: #e7e7e7;
@@ -37,9 +38,11 @@
     flex-direction: column;
     gap: 10px;
     box-shadow: 1px 1px 5px #e7e7e7;
-    padding: 20px;
+    padding: 8px;
 }
-
+.container h2 {
+    margin: 6px 0;
+}
 main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
