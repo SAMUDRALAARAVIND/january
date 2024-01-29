@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <style>
+      input {
+        /* display: none; */
+      }
+      #question {
+        display: none;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      input + label {
+        padding: 10px;
+        display: inline-block;
+      }
+      input:checked + label {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="categories">
+      <div class="chips"></div>
+      <button>Submit</button>
+    </form>
+
+    <section id="question">
+      <p id="description"></p>
+      <div id="options"></div>
+      <button>Next</button>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
