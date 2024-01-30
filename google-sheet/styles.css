@@ -2,7 +2,6 @@ body {
     margin: 0;
 }
 .container {
-    margin: 50px 0;
     height: 80vh;
     width: 100vw;
     display: grid;
@@ -42,7 +41,7 @@ body {
 }
 
 .sno .sno-cell {
-    height: 30px;
+    height: 20px;
     border: 0.5px solid #C0C0C0;
     display: flex;
     align-items: center;
@@ -56,12 +55,79 @@ body {
 .cell {
     border: 0.5px solid #C0C0C0;
     width: 150px;
-    min-height: 30px;
-    height: 30px !important;
+    min-height: 20px;
+    height: 20px !important;
     overflow: hidden;
     font-size: 12px;
 }
 
 .cell:focus {
     border-color: blue;
+}
+
+
+.options {
+    background-color: #F8FBFD;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-container {
+    padding: 10px;
+    background-color: #EDF2FA;
+    margin: 0 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 50px;
+    align-items: center;
+}
+
+.fr-aic {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="checkbox"] , input[type="radio"] {
+    display: none;
+}
+input[type="color"] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+input[type="checkbox"]:checked + label , input[type="radio"]:checked + label  {
+    background-color: #D3E2FD;
+}
+label {
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.box {
+    width: 80vw;
+    margin: auto;
+}
+.box .selected-cell {
+    background-color: #D3E2FD;
+    padding: 10px;
+    border-radius: 5px;
+    width: 40px;
+    text-align: center;
+}
+.box input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 50px;
+    border-width: .1px;
+}
+.active-cell {
+    border-color: transparent;
+
+    outline: 2px solid #0957D0;
+    position: relative;
+    z-index: 10;
+    /* border-radius: 1px; */
 }

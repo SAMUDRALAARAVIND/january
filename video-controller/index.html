@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Controller</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <video src="./this-keyword-screen-recording.mov"></video>
+      <div class="options">
+        <div class="progress-bar">
+          <div class="peek seek-bar"></div>
+        </div>
+        <div class="fr-aic" style="justify-content: space-between">
+          <div class="play-pause material-icons">play_arrow</div>
+          <input
+            type="range"
+            name="volume"
+            id="volume"
+            min="0"
+            value="0"
+            max="10"
+          />
+          <input
+            type="range"
+            name="speed"
+            id="speed"
+            min="1"
+            max="6"
+            value="3"
+          />
+          <button class="fr-aic" id="backward">
+            <span class="material-icons" style="transform: rotate(180deg)"
+              >fast_forward</span
+            >
+            <span>10</span>
+          </button>
+          <button class="fr-aic" id="forward">
+            <span>25</span>
+            <span class="material-icons">fast_forward</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./video-controller.js"></script>
+  </body>
+</html>

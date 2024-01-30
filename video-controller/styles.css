@@ -1,0 +1,48 @@
+video {
+    width: 100%;
+}
+
+section {
+    width: 600px;
+    position: relative;
+}
+.options {
+    height: 60px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #00000034;
+}
+.progress-bar {
+    height: 4px;
+    border-radius: 4px;
+    background-color: rgb(114, 67, 67);
+}
+.peek {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    background-color: red;
+}
+.fr-aic {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.material-icons {
+    color: white;
+}
+.play-pause {
+    cursor: pointer;
+}

@@ -28,6 +28,9 @@ for (let i = 1; i <= rows; i++) {
         const cell = document.createElement("div");
         cell.className = "cell";
         cell.contentEditable = true;
+        cell.id = `${String.fromCharCode(j + 64)}${i}`;
+
+        cell.addEventListener("focus", onFocusCell);
         row.appendChild(cell);
     }
 
