@@ -31,6 +31,7 @@ for (let i = 1; i <= rows; i++) {
         cell.id = `${String.fromCharCode(j + 64)}${i}`;
 
         cell.addEventListener("focus", onFocusCell);
+        cell.addEventListener("input", onChangeInnerText)
         row.appendChild(cell);
     }
 

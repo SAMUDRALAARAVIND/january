@@ -12,57 +12,69 @@
   </head>
   <body>
     <section class="options">
-      <form class="form-container" id="options-form">
-        <select name="fontFamily">
-          <option value="default">Default</option>
-        </select>
-        <input type="number" name="fontSize" value="16" />
-        <div>
-          <input type="checkbox" name="isBold" id="isBold" />
-          <label for="isBold" class="material-icons">format_bold</label>
-        </div>
-        <div>
-          <input type="checkbox" name="isItalic" id="isItalic" />
-          <label for="isItalic" class="material-icons">format_italic</label>
-        </div>
-        <div>
-          <input type="checkbox" name="isUnderlined" id="isUnderlined" />
-          <label for="isUnderlined" class="material-icons"
-            >format_underlined</label
-          >
-        </div>
-        <div class="align-container fr-aic">
+      <div class="fr-aic" style="justify-content: center; gap: 20px">
+        <form class="form-container" id="options-form">
+          <select name="fontFamily">
+            <option value="default">Default</option>
+          </select>
+          <input type="number" name="fontSize" value="16" />
           <div>
-            <input type="radio" name="align" checked value="left" id="left" />
-            <label for="left" class="material-icons">format_align_left</label>
+            <input type="checkbox" name="isBold" id="isBold" />
+            <label for="isBold" class="material-icons">format_bold</label>
           </div>
           <div>
-            <input type="radio" name="align" value="center" id="center" />
-            <label for="center" class="material-icons"
-              >format_align_center</label
+            <input type="checkbox" name="isItalic" id="isItalic" />
+            <label for="isItalic" class="material-icons">format_italic</label>
+          </div>
+          <div>
+            <input type="checkbox" name="isUnderlined" id="isUnderlined" />
+            <label for="isUnderlined" class="material-icons"
+              >format_underlined</label
+            >
+          </div>
+          <div class="align-container fr-aic">
+            <div>
+              <input type="radio" name="align" checked value="left" id="left" />
+              <label for="left" class="material-icons">format_align_left</label>
+            </div>
+            <div>
+              <input type="radio" name="align" value="center" id="center" />
+              <label for="center" class="material-icons"
+                >format_align_center</label
+              >
+            </div>
+            <div>
+              <input type="radio" name="align" value="right" id="right" />
+              <label for="right" class="material-icons"
+                >format_align_right</label
+              >
+            </div>
+          </div>
+          <div>
+            <input type="color" name="textColor" id="textColor" />
+            <label for="textColor" class="material-icons"
+              >format_color_text</label
             >
           </div>
           <div>
-            <input type="radio" name="align" value="right" id="right" />
-            <label for="right" class="material-icons">format_align_right</label>
+            <input
+              type="color"
+              name="backgroundColor"
+              id="bgColor"
+              value="#ffffff"
+            />
+            <label for="bgColor" class="material-icons"
+              >format_color_fill</label
+            >
           </div>
-        </div>
-        <div>
-          <input type="color" name="textColor" id="textColor" />
-          <label for="textColor" class="material-icons"
-            >format_color_text</label
-          >
-        </div>
-        <div>
-          <input
-            type="color"
-            name="backgroundColor"
-            id="bgColor"
-            value="#ffffff"
-          />
-          <label for="bgColor" class="material-icons">format_color_fill</label>
-        </div>
-      </form>
+        </form>
+        <span type="button" id="download" class="material-icons">
+          cloud_download
+        </span>
+
+        <label for="upload" class="material-icons">cloud_upload</label>
+        <input type="file" id="upload" style="display: none" />
+      </div>
       <div class="box fr-aic">
         <div class="selected-cell">NA</div>
         <input id="expression" type="text" placeholder="Evaluate Expression" />
@@ -77,5 +89,6 @@
 
     <script src="./options.js"></script>
     <script src="./script.js"></script>
+    <script src="download-upload.js"></script>
   </body>
 </html>

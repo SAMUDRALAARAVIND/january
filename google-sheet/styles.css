@@ -58,7 +58,6 @@ body {
     min-height: 20px;
     height: 20px !important;
     overflow: hidden;
-    font-size: 12px;
 }
 
 .cell:focus {

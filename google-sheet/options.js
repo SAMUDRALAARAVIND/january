@@ -4,6 +4,69 @@ const expressionInput = document.getElementById("expression");
 
 // selectedCell => points to the html element which is focused.
 let selectedCell = null;
+const state = {};
+
+const defaultState = {
+    innerText: "",
+    isBold: false,
+    align: "left",
+    isUnderlined: false,
+    isItalic: false,
+    fontSize: "16",
+    fontFamily: "Sans Serif",
+    textColor: "#000000",
+    backgroundColor: "#ffffff"
+}
+
+/**
+ * state = {
+ *     C5: {
+ *         innerText: "Aravind",
+ *         isBold: true,
+ *         align: "center",
+ *         isUnderlined: false,
+ *         isItalic: true,
+ *         fontSize: "16",
+ *         fontFamily: "Sans Serif",
+ *         textColor: "#d78",
+ *         backgroundColor: "#000"
+ *     }
+ * }
+ * 
+ * For every cell the data in the state object should get updated upon every form change & innerText change
+ */
+
+function applyCellInfoToForm() {
+    // this function will sync the options inside form with the actual data of cell.
+
+    if (state[selectedCell.id]) {
+        // Already edited cell
+        const data = state[selectedCell.id];
+        for (let key in data) {
+            // key = "isBold"
+            // form["isBold"] => <input type="checkbox" />
+            if (form[key].type === "checkbox") {
+                form[key].checked = data[key]; // data["isBold"] => true | false
+            }
+            else form[key].value = data[key];
+        }
+    }
+    else {
+        // Focused for the first time.
+        form.reset();
+    }
+}
+
+function onChangeInnerText() {
+    if (state[selectedCell.id]) {
+        // already if it's data is present inside the state object
+        state[selectedCell.id].innerText = selectedCell.innerText;
+    }
+    else {
+        // if it's for the first time
+        state[selectedCell.id] = { ...defaultState, innerText: selectedCell.innerText }
+    }
+}
 
 function onFocusCell(e) {
     if (selectedCell) {
@@ -12,6 +75,7 @@ function onFocusCell(e) {
     selectedCell = e.target;
     activeCellElement.innerText = selectedCell.id;
     selectedCell.classList.add("active-cell")
+    applyCellInfoToForm();
 }
 
 function applyStylesToSelectedCell(styles) {
@@ -45,6 +109,7 @@ form.addEventListener("change", function () {
         backgroundColor: form["backgroundColor"].value
     }
 
+    state[selectedCell.id] = { ...formData, innerText: selectedCell.innerText };
     applyStylesToSelectedCell(formData);
 });
 
