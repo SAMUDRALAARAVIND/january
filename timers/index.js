@@ -253,3 +253,36 @@ let o2 = { name: "ajdjdj" };
 // stopBtn.addEventListener("click", () => {
 //     clearInterval(id);
 // });
+
+const loading = document.getElementById("loading");
+let voices;
+loading.innerText = "Loading voicess ..... ";
+let id = setInterval(() => {
+    let x = speechSynthesis.getVoices();
+    if (x.length > 0) {
+        voices = x;
+        loading.innerText = "Loaded voiced";
+        clearInterval(id);
+    }
+}, 500)
+
+function speak() {
+    let x = new SpeechSynthesisUtterance("Hello Guys, this is the last class of F2");
+    x.rate = 0.2;
+    x.voice = voices[8];
+    // intialises the speaking of utterance object
+    speechSynthesis.speak(x);
+}
+
+let isPaused = false;
+
+function pause() {
+    if (isPaused) {
+        speechSynthesis.resume();
+        isPaused = false;
+    }
+    else {
+        speechSynthesis.pause();
+        isPaused = true;
+    }
+}
